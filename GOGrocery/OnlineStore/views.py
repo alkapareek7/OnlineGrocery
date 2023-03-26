@@ -5,6 +5,5 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import Store
 # Create your views here.
-
 def Store(request):
    return HttpResponse("Hello world!")
