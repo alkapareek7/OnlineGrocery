@@ -1,12 +1,9 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="logo"><a href="index.html">GOGrocery</a></div>
-<nav class="main_nav">
-    <ul style="text-decoration: none; color: inherit" href="#" >
-        <li><a href="accounts/register">Register</a></li>
-        <li><a href="accounts/login">Login</a></li>
-    </ul>
-</nav>
+<div class="topnav">
+  <a href="accounts/login">LogIn</a>
+  <a href="accounts/register">Register</a>
+</div>
 <div class="p-5 mb-4 bg-light rounded-3">
   <div class="container-fluid py-5">
     <h1 class="display-5 fw-bold">Visit your lists</h1>
@@ -15,7 +12,7 @@
       promted to LogIn or SignIn, If it is not your first time you will know
       what you will see after this button is clicked. Good luck.
     </p>
-    <a style="text-decoration: none; color: inherit"
+    <a style="text-decoration: none; color: inherit"; href="accounts/login"
       ><button class="btn btn-primary btn-lg" type="button">Lets go IN</button>
     </a>
   </div>
