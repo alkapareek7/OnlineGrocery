@@ -6,15 +6,14 @@ from django.contrib import messages
 
 def registerPage(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password1 = request.POST['password1']
-        password2 = request.POST['password2']
-        email = request.POST['email']
+        username = request.POST.get('username', "default value")
+        password1 = request.POST.get('password1', "default value")
+        password2 = request.POST.get('password2', "default value")
+        email = request.POST.get('email', "default value")
 
-        user = User.objects.create_user(username=username, password=password1, email=email)
-        user.save()
+       
         
-        return redirect('login.html')
+        return redirect('home')
     else:
         return render(request,'register.html')
     
