@@ -14,7 +14,7 @@ def registerPage(request):
         user = User.objects.create_user(username=username, password=password1, email=email)
         user.save();
         
-        return redirect('login')
+        return redirect('login.html')
     else:
         return render(request,'register.html')
     
@@ -32,7 +32,7 @@ def loginPage(request):
             messages.info(request, 'Username OR password is incorrect')
            
     context = {}
-    return render(request, 'login.html', context)
+    return render(request, 'login', context)
 
 def logoutUser(request):
     logout(request)

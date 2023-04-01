@@ -3,6 +3,9 @@ from . import views
 from .views import home
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
+from django.urls import path, include
+from .views import registerPage, loginPage , home
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -10,4 +13,7 @@ from django.urls import path
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path("", home, name="index"), 
+    path("registerPage/", login_required(registerPage), name="registerPage"),
+    path("loginPage/", login_required(loginPage), name= "loginPage"),
 ]
