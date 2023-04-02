@@ -10,6 +10,7 @@ def registerPage(request):
         password1 = request.POST.get('password1', "default value")
         password2 = request.POST.get('password2', "default value")
         email = request.POST.get('email', "default value")
+        print("email")
 
        
         

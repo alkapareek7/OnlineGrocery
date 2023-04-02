@@ -15,6 +15,9 @@ from django.contrib import messages
 def home(request):
     return render (request, "home.html")
 
+def groceryList(request):
+    return render (request, "groceryList.html")
+    
 
 def registerPage(request):
     if request.method == 'POST':
