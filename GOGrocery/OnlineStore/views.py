@@ -24,7 +24,7 @@ def registerPage(request):
         email = request.POST['email']
 
         user = User.objects.create_user(username=username, password=password1, email=email)
-        user.save();
+        user.save()
         
         return redirect('login')
     else:
