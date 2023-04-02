@@ -51,3 +51,5 @@ def logoutUser(request):
     return redirect('login')
 
 
+def groceryList(request):
+    return render (request, "groceryList.html")
