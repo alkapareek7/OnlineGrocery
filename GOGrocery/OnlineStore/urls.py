@@ -1,6 +1,6 @@
 from django.urls import include, path
 from . import views
-from .views import home
+from .views import groceryList, home
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
 from django.urls import path, include
