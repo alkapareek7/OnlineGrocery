@@ -15,6 +15,9 @@ from django.contrib import messages
 def home(request):
     return render (request, "home.html")
 
+def groceryList(request):
+    return render (request, "groceryList.html")
+    
 
 def registerPage(request):
     if request.method == 'POST':
@@ -24,7 +27,7 @@ def registerPage(request):
         email = request.POST['email']
 
         user = User.objects.create_user(username=username, password=password1, email=email)
-        user.save();
+        user.save()
         
         return redirect('login')
     else:
@@ -51,3 +54,5 @@ def logoutUser(request):
     return redirect('login')
 
 
+def groceryList(request):
+    return render (request, "groceryList.html")
