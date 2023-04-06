@@ -8,7 +8,7 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Vegetable_name</th>
+            <th scope="col">Reciepe name</th>
             <th scope="col">Quantity</th>
             <th scope="col">Created at</th>
             <th scope="col">Actions</th>
@@ -17,7 +17,7 @@
         <tbody>
           {% for groceryList in groceryLists%}
           <tr>
-            <th scope="row">{{shopping_list.id}}</th>
+            <th scope="row">{{groceryList.id}}</th>
             <td><a href="{{groceryList.id}}">{{groceryList.Vegetable_name}}</a></td>
             <td>{{groceryList.created_at}}</td>
             <td>
@@ -38,7 +38,7 @@
             </label>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary" name="reciepe_add" value="reciepe_add">Create Item</button> 
+        <button type="submit" class="btn btn-primary" name="reciepe_add" value="reciepe_add">Create Reciepe</button> 
 
       <div class= "col-8">
         <div class="mb-2">
@@ -51,7 +51,7 @@
             </label>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary" name="Desserts_add" value="Desserts_add">Create Item</button>
+        <button type="submit" class="btn btn-primary" name="Desserts_add" value="Desserts_add">Create Reciepe</button>
            
       </div>
     </div>

@@ -17,6 +17,9 @@ def home(request):
 
 def groceryList(request):
     return render (request, "groceryList.html")
+
+def reciepeLists(request):
+    return render (request, "reciepeLists.html")
     
 
 def registerPage(request):
@@ -52,7 +55,3 @@ def loginPage(request):
 def logoutUser(request):
     logout(request)
     return redirect('login')
-
-
-def groceryList(request):
-    return render (request, "groceryList.html")
