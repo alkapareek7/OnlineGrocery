@@ -17,7 +17,7 @@ class groceryList(Model):
     is_organic = BooleanField(default=False)
     quantity = IntegerField(max_length=100)
 
-class groceryItems(Model):
+class GroceryItems(Model):
     name = CharField('Shopping list name', max_length=100)
     is_organic = BooleanField(default=False)
     quantity = IntegerField(max_length=100)

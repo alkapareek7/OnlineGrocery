@@ -2,7 +2,7 @@
 
 # Create your views here.
 from django.shortcuts import render, redirect
-from .models import Store
+from .models import Store, GroceryItems
 from django.contrib.auth.views import LoginView
 from django.views.generic.base import TemplateView
 from django.contrib.auth.models import User
@@ -21,7 +21,38 @@ def groceryList(request):
     return render (request, "groceryList.html")
 
 def groceryItems(request):
-    return render (request, "groceryItems.html")
+    items = GroceryItems.objects.all()
+    if request.method == 'POST':
+        if request.POST.get('item_add'):
+            veg_name = request.POST['vegetable_name']
+            quantity = request.POST['quantity']
+            GroceryItems.objects.create(name=veg_name, quantity= int(quantity))
+        elif request.POST.get('delete'):
+               id_to_delete = request.POST.get("delete")
+               item_to_delete = GroceryItems.objects.get(
+                   pk=id_to_delete)
+               item_to_delete.delete()
+        elif request.POST.get('checkbox'):
+            ids_to_update = request.POST.getlist("checkbox")
+            print(ids_to_update)
+            for item in items:
+                item_to_update = GroceryItems.objects.get(
+                    pk=item.pk)
+                item_to_update.is_organic= str(item.pk) in ids_to_update
+                print(item.pk, ids_to_update, item_to_update.is_organic)
+                item_to_update.save()
+                items = GroceryItems.objects.all()
+        else:
+            for item in items:
+                item_to_update = GroceryItems.objects.get(
+                    pk=item.pk)
+                item_to_update.is_organic= False
+                item_to_update.save()
+                items = GroceryItems.objects.all()
+
+        return render (request, "groceryItems.html", context={'items':items})
+    
+    return render (request, "groceryItems.html", context={'items':items})
     
 
 def registerPage(request):
