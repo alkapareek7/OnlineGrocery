@@ -10,8 +10,8 @@ class Store(models.Model):
     name = models.CharField(max_length=20)
     quantity = models.IntegerField(max_length=20)
 
-class GroceryList(Model):
-    Vegetable_name = CharField('Shopping list item name', max_length=100)
+class groceryList(Model):
+    Vegetable_name = CharField('Shopping list name', max_length=100)
     user = ForeignKey(User, on_delete = CASCADE)
     created_at = DateField(default=datetime.now())
     is_organic = BooleanField(default=False)

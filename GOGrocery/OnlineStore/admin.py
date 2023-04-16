@@ -10,6 +10,9 @@ admin.site.register(groceryList)
 admin.site.register(GroceryItems)
 
 
-admin.site.register(Store)
-admin.site.register(GroceryList)
->>>>>>> c15f5164e3ebff596aadd9ec4df778d378b10fb9
+from django.apps import AppConfig
+
+
+class OnlinestoreConfig(AppConfig):
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "OnlineStore"
