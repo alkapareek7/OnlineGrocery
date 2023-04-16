@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+
 # Create your views here.
 
 def registerPage(request):
@@ -10,13 +11,12 @@ def registerPage(request):
         password1 = request.POST.get('password1', "default value")
         password2 = request.POST.get('password2', "default value")
         email = request.POST.get('email', "default value")
-      
-
-       
-        
         return redirect('home')
     else:
-        return render(request,'register.html')
+        return render(request,'register')
+    
+
+
     
 def loginPage(request):
     if request.method == 'POST':
